@@ -1,0 +1,126 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+
+#top ul{
+	float:left;
+	text-decoration:none;
+}
+#top ul li{
+	float:left;
+}
+#top ul li a{
+	text-decoration:none;
+}
+
+#div1{ 
+	position:fixed; 
+	top:0; 
+	left:0; 
+	bottom:0; 
+	right:0; 
+	z-index:-1; 
+}
+#div1 > img { 
+	height:100%; 
+	width:100%; 
+	border:0; 
+}
+
+#top ul{
+	float:left;
+	padding-left:25%;
+	width:75%;
+	height:40px;
+	position:absolter;
+	top:0;
+	line-height:40px;
+	background-color:#87cefa;
+}
+#top ul li{
+	float:left;
+	margin-left:80px;
+}
+#logo img{
+	width:34px;
+	height:34px;
+	margin-top:-37px;
+	margin-left:20px;
+}
+
+#top a{
+	color:white;
+}
+
+#logo img{
+	width:34px;
+	height:34px;
+	margin-top:-37px;
+	margin-left:20px;
+}
+
+#top a{
+	color:white;
+}
+
+
+h3{
+	margin-left:60px;
+}
+
+.showgrades{
+	width:100%;
+	margin:30px auto 0 ;
+	padding: 0 20%;
+}
+.showgrades p{
+	display:block;
+	margin-top:20px;
+}
+
+#test{
+	margin-left:240px;
+	margin-top:-20px;
+}
+
+ a{
+	text-decoration:none;
+	color:blue;
+}
+a:visted{
+	text-decoration:none;
+	color:blue;
+}
+
+
+#header1{
+	float:right;
+	width:100px;
+	color:red;
+	position:absolute;
+	right:3px;
+	top:0;
+}
+
+#header1 #userope{
+	display:none;
+}
+#header1 #userope ul{
+	float:left;
+	list-style-type:none;
+}
+
+#header1 #userope ul li{
+	font-size:13px;
+	padding-top:3px;
+}
+
+#header1 span{
+	color:gray;
+}
+
+#header1 a:hover span{
+	color:black;
+}

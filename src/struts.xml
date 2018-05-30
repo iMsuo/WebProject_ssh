@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<!--下述语句是将struts2交给spring管理 -->
+<constant name="struts.objectFactory" value="spring" />
+
+<!--将action内容放在package元素下，package元素的name值与extends值可以使用默认值，如下所示 -->
+<package name="all" extends="struts-default">
+<!--例如与用户登录相关的LoginAction，配置如下，其中，class值与applicationContext.xml文件中该action的id值相对应，name值作为标识-->
+    <action name="login" class="LoginAction">
+<!--result元素设置页面跳转值，其中name值为目标页面的字符串标识，如下，登录失败时回到fail.jsp页面，成功时，转向success.jsp页面 -->
+    <result name="fail">/jsp/login/fail.jsp</result>
+    <result name="success">/jsp/login/success.jsp</result>
+    </action>
+    
+    
+    <action name="changepwd" class="LoginAction" method="changepwd">
+    <result name="fail">/jsp/login/fail.jsp</result>
+    <result name="success">/jsp/login/success.jsp</result>
+    </action>
+    
+    
+    
+    <action name="register" class="registerAction">
+    <result name="fail">/jsp/login/fail.jsp</result>
+    <result name="success">/jsp/login/success.jsp</result>
+    </action>
+    
+    
+    <action name="testwords" class="testwordsAction">
+	    <result name="fail">/jsp/login/fail.jsp</result>
+	    <result name="success1">/jsp/studycontent/testwords.jsp</result>
+	    <result name="success2">/jsp/studycontent/testwords2.jsp</result>
+    </action>
+    
+    <action name="getgrade" class="testwordsAction" method="getgrade">
+	    <result name="fail">/jsp/login/fail.jsp</result>
+	    <result name="success">/jsp/studycontent/getgrade.jsp</result>
+    </action>
+    
+     <action name="logout" class="logouAction">
+	    <result name="fail">/jsp/login/fail.jsp</result>
+	    <result name="success">/jsp/login/success.jsp</result>
+    </action>
+    
+    
+     <action name="showlanmu" class="ticketAction" method="showlanmu">
+	    <result name="error">/jsp/login/fail.jsp</result>
+	    <result name="success">/jsp/ticket/showlanmu.jsp</result>
+    </action>
+    
+    <action name="showtickets" class="ticketAction" method="showtickets">
+	    <result name="error">/jsp/login/fail.jsp</result>
+	    <result name="success">/jsp/ticket/showtickets.jsp</result>
+    </action>
+    
+    <action name="showticketwords" class="ticketAction" method="showticketwords">
+	    <result name="error">/jsp/ticket/showticketwords.jsp</result>
+	    <result name="success">/jsp/ticket/showticketwords.jsp</result>
+    </action>
+        <action name="publishticket" class="ticketAction" method="publishticket">
+	    <result name="error">/jsp/login/fail.jsp</result>
+	    <result name="success">/jsp/login/success.jsp</result>
+    </action>
+    <action name="addreplys" class="ticketAction" method="addreply">
+	    <result name="error">/jsp/login/fail.jsp</result>
+	    <result name="success">/jsp/login/success.jsp</result>
+    </action>
+    
+    
+    <action name="shownews" class="shownewsAction" method="ShowNews">
+	    <result name="error">/jsp/login/fail.jsp</result>
+	    <result name="success">/jsp/news/shownews.jsp</result>
+    </action>
+    
+    <action name="onlynews" class="shownewsAction" method="onlynews">
+	    <result name="error">/jsp/login/fail.jsp</result>
+	    <result name="success">/jsp/news/showonlynews.jsp</result>
+    </action>
+    
+    <action name="onlyarticle" class="shownewsAction" method="onlyarticle">
+	    <result name="error">/jsp/login/fail.jsp</result>
+	    <result name="success">/jsp/news/showonlyarticle.jsp</result>
+    </action>
+    
+    <action name="revealnews" class="shownewsAction" method="appointednews">
+	    <result name="error">/jsp/login/fail.jsp</result>
+	    <result name="success">/jsp/news/revealnews.jsp</result>
+    </action>
+    
+    <action name="showbooks" class="showbooksAction" method="showbooks">
+	    <result name="error">/jsp/login/fail.jsp</result>
+	    <result name="success">/jsp/books/showbooks.jsp</result>
+    </action>
+ 
+ 
+     <action name="showbooklists" class="showbooksAction" method="showbooklists">
+	    <result name="error">/jsp/login/fail.jsp</result>
+	    <result name="success">/jsp/books/showbookslist.jsp</result>
+    </action>   
+    
+    <action name="showbook" class="showbooksAction" method="showbook">
+	    <result name="error">/jsp/login/fail.jsp</result>
+	    <result name="success">/jsp/books/showbook.jsp</result>
+    </action>  
+    
+     <action name="listenexam" class="listenAction" method="getques">
+	    <result name="error">/jsp/login/fail.jsp</result>
+	    <result name="success">/jsp/listen/listenexam.jsp</result>
+    </action>  
+    
+    <action name="listengrades" class="listenAction" method="getgrades">
+	    <result name="error">/jsp/login/fail.jsp</result>
+	    <result name="success">/jsp/listen/getgrade.jsp</result>
+    </action>  
+    
+    
+    <action name="showgrades" class="gradesAction">
+	    <result name="error">/jsp/login/fail.jsp</result>
+	    <result name="success">/jsp/user/showgrades.jsp</result>
+    </action>  
+    
+    
+    
+</package>
+
+</struts>    

@@ -1,0 +1,30 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+
+tr{
+	text-align:center;
+}
+table{
+	margin-top:50px;
+}
+tr{
+	display:block;
+	padding-top:30px;
+	padding-left:330px;
+	border:none;
+}
+table tr a{
+	text-decoration:none;
+	color:blue;
+	font-size:30px;
+}
+table a:hover{
+	color:red;
+	font-size:40px;
+}
+tr a:visted{
+	color:blue;
+}

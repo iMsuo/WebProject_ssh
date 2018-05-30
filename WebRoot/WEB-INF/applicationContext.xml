@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	 xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/aop 
+						http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+
+
+
+<bean id="txManager"
+  class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+  <property name="sessionFactory" ref="sessionFactory" />
+ </bean>
+
+
+
+<!--指明hibernate配置文件的位置  -->
+<bean id="sessionFactory"
+    class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+   <property name="configLocation" value="classpath:hibernate.cfg.xml" />
+</bean>
+
+
+
+<!--定义DAO  -->
+<bean id="userDao" class="dao.system.UserDao">
+   <property name="sessionFactory"> 
+       <ref bean="sessionFactory"/>  
+   </property>
+</bean>
+
+<bean id="wordsDao" class="dao.system.WordsDao">
+   <property name="sessionFactory"> 
+       <ref bean="sessionFactory"/>  
+   </property>
+</bean>
+
+<bean id="showgradesDao" class="dao.system.showgradesDao">
+   <property name="sessionFactory"> 
+       <ref bean="sessionFactory"/>  
+   </property>
+</bean>
+
+<bean id="newsDao" class="dao.system.NewsDao">
+   <property name="sessionFactory"> 
+       <ref bean="sessionFactory"/>  
+   </property>
+</bean>
+
+<bean id="booksDao" class="dao.system.BooksDao">
+   <property name="sessionFactory"> 
+       <ref bean="sessionFactory"/>  
+   </property>
+</bean>
+
+<bean id="listenDao" class="dao.system.ListenDao">
+   <property name="sessionFactory"> 
+       <ref bean="sessionFactory"/>  
+   </property>
+</bean>
+
+
+<bean id="insertgradesDao" class="dao.system.InsertgradesDao">
+   <property name="sessionFactory"> 
+       <ref bean="sessionFactory"/>  
+   </property>
+    <property name="userDao">
+        <ref bean="userDao"/>
+      </property>
+</bean>
+
+
+
+<bean id="ticketDao" class="dao.system.TicketDao">
+   <property name="sessionFactory"> 
+       <ref bean="sessionFactory"/>  
+   </property>
+           <property name="userDao">
+        <ref bean="userDao"/>
+      </property>
+</bean>
+
+
+<!--   配置LoginAction.java类文件 -->
+<bean id="LoginAction" class="action.user.LoginAction" scope="prototype">
+<property name="userService" ref="userService" />
+</bean>
+
+
+<bean id="logouAction" class="action.user.LogoutAction" scope="prototype">
+</bean>
+
+<bean id="ticketAction" class="action.bbs.TicketAction" scope="prototype">
+<property name="ticketService" ref="ticketservice" />
+</bean>
+
+
+<bean id="registerAction" class="action.user.RegisterAction" scope="prototype">
+<property name="userService" ref="userService" />
+</bean>
+
+<bean id="testwordsAction" class="action.words.TestwordsAction" scope="prototype">
+<property name="wordsService" ref="wordsService" />
+<property name="insertgradesService" ref="insertgradesService" />
+</bean>
+
+
+<bean id="shownewsAction" class="action.news.ShowNewsAction" scope="prototype">
+<property name="newsService" ref="newsService" />
+</bean>
+
+
+<bean id="showbooksAction" class="action.books.BooksAction" scope="prototype">
+<property name="booksService" ref="booksService" />
+</bean>
+
+<bean id="gradesAction" class="action.showgrades.ShowgradesAction" scope="prototype">
+<property name="showgradesService" ref="showgradesService" />
+</bean>
+
+<bean id="listenAction" class="action.listentest.ListenAction" scope="prototype">
+<property name="listenService" ref="listenService" />
+<property name="insertgradesService" ref="insertgradesService" />
+</bean>
+
+
+  
+    <!-- 配置service层 -->
+<bean id="userService" class="service.system.UserService">
+        <property name="userDao">
+        <ref bean="userDao"/>
+      </property>
+  </bean>
+  
+  <bean id="wordsService" class="service.system.WordsService">
+   <property name="wordsDao">
+        <ref bean="wordsDao"/>
+      </property>
+</bean>
+
+  <bean id="ticketservice" class="service.system.TicketService">
+   <property name="ticketDao">
+        <ref bean="ticketDao"/>
+      </property>
+</bean>
+  
+<bean id="newsService" class="service.system.NewsService">
+   <property name="newsDao">
+        <ref bean="newsDao"/>
+</property>
+</bean>
+
+
+<bean id="showgradesService" class="service.system.showgradesService">
+   <property name="showgradesDao">
+        <ref bean="showgradesDao"/>
+</property>
+</bean>
+
+<bean id="booksService" class="service.system.BooksService">
+   <property name="booksDao">
+        <ref bean="booksDao"/>
+</property>
+</bean>
+
+<bean id="listenService" class="service.system.ListenService">
+   <property name="listenDao">
+        <ref bean="listenDao"/>
+</property>
+</bean>
+
+<bean id="insertgradesService" class="service.system.InsertgradesService">
+   <property name="insertgradesDao">
+        <ref bean="insertgradesDao"/>
+</property>
+</bean>
+
+
+</beans>

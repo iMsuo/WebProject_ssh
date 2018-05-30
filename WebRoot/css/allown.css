@@ -1,0 +1,16 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+
+#top ul{
+	float:left;
+	text-decoration:none;
+}
+#top ul li{
+	float:left;
+}
+#top ul li a{
+	text-decoration:none;
+}

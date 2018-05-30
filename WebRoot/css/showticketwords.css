@@ -1,0 +1,67 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+table{
+	
+}
+
+table tr{
+	height:80px;
+	display:block;
+	margin-left:250px;
+	border-top:1px solid gray;
+	padding-top:20px;
+}
+td{
+	width:200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.pic{
+	width:60px;
+}
+.contents{
+	width:400px;
+	margin-left:0px;
+}
+.sub{
+	width:300px;
+}
+#choose{
+	margin-left:700px;
+}
+
+#choose span{
+	display:block;
+	margin-left:50px;
+	margin-top:-18px;
+}
+
+#formsub{
+	margin-left:160px;
+	margin-top:50px;
+}
+#formsub input,textarea{
+	margin-top:5px;
+}
+
+#formsub input[type="submit"]
+{
+	width:50px;
+	height:30px;
+	margin-left:240px;
+	margin-bottom:10px;
+	border-radius:10px;
+}
+
+#topsum p{
+	display:block;
+	margin-left:160px;
+	margin-bottom:40px;
+}
+a{
+	text-decoration:none;
+}
